@@ -60,9 +60,9 @@ ${pc.bold(pc.white("  INTERVENTION & CONTROL"))}
 
   ${pc.bgRed(pc.white(" /pause "))}      ${pc.dim("─")} Pause auto-reply       ${pc.dim("/pause @user [min]")}
   ${pc.bgGreen(pc.white(" /resume "))}     ${pc.dim("─")} Resume auto-reply      ${pc.dim("/resume @user")}
-  ${pc.bgMagenta(pc.white(" /tell "))}       ${pc.dim("─")} Tell bot what to do     ${pc.dim("/tell @user be sweet")}
-  ${pc.bgCyan(pc.white(" /send "))}       ${pc.dim("─")} Send message directly  ${pc.dim("/send @user hey babe")}
-  ${pc.bgBlue(pc.white(" /queue "))}      ${pc.dim("─")} Queue delayed message  ${pc.dim("/queue @user 60 miss you")}
+  ${pc.bgMagenta(pc.white(" /tell "))}       ${pc.dim("─")} Tell bot what to do     ${pc.dim("/tell @user be concise")}
+  ${pc.bgCyan(pc.white(" /send "))}       ${pc.dim("─")} Send message directly  ${pc.dim("/send @user hey there")}
+  ${pc.bgBlue(pc.white(" /queue "))}      ${pc.dim("─")} Queue delayed message  ${pc.dim("/queue @user 60 checking in")}
   ${pc.bgYellow(pc.black(" /intervene "))} ${pc.dim("─")} Show active overrides
 
 ${THIN_DIVIDER}
@@ -101,7 +101,7 @@ ${THIN_DIVIDER}
 ${pc.bold(pc.white("  INTELLIGENCE"))}
 
   ${pc.bgCyan(pc.white(" /analyze "))}   ${pc.dim("─")} V5 psychological analysis  ${pc.dim("/analyze @user")}
-  ${pc.bgBlue(pc.white(" /health "))}    ${pc.dim("─")} Relationship health score  ${pc.dim("/health @user")}
+  ${pc.bgBlue(pc.white(" /health "))}    ${pc.dim("─")} Conversation health score  ${pc.dim("/health @user")}
   ${pc.bgYellow(pc.black(" /memory "))}    ${pc.dim("─")} Memory recall              ${pc.dim("/memory @user")}
   ${pc.bgMagenta(pc.white(" /train "))}     ${pc.dim("─")} Train ML models
 
@@ -114,14 +114,14 @@ ${pc.bold(pc.white("  EXAMPLES"))}
 ${DIVIDER}
 
   ${pc.cyan(">")} ${pc.white("Read the last 5 messages from @username")}
-  ${pc.cyan(">")} ${pc.white("What should I reply to her message?")}
-  ${pc.cyan(">")} ${pc.white("/tell @user be more aggressive for 30 minutes")}
+  ${pc.cyan(">")} ${pc.white("What should I reply to their message?")}
+  ${pc.cyan(">")} ${pc.white("/tell @user be more concise for 30 minutes")}
   ${pc.cyan(">")} ${pc.white("/pause @user 60")} ${pc.dim("(take manual control for 1 hour)")}
-  ${pc.cyan(">")} ${pc.white("/send @user good morning beautiful")}
+  ${pc.cyan(">")} ${pc.white("/send @user hey, how's it going?")}
   ${pc.cyan(">")} ${pc.white("/voice register saved")} ${pc.dim("(clone from Saved Messages)")}
-  ${pc.cyan(">")} ${pc.white("/voice send @user I miss you so much")}
-  ${pc.cyan(">")} ${pc.white("/queue @user 300 hey, just thinking about you")}
-  ${pc.cyan(">")} ${pc.white("Be flirty with @username")} ${pc.dim("(sets auto-reply tone)")}
+  ${pc.cyan(">")} ${pc.white("/voice send @user thanks for the update")}
+  ${pc.cyan(">")} ${pc.white("/queue @user 300 hey, just checking in")}
+  ${pc.cyan(">")} ${pc.white("Be friendly with @username")} ${pc.dim("(sets auto-reply tone)")}
 
 ${DIVIDER}
 `;
@@ -1347,7 +1347,7 @@ async function main() {
             continue;
           }
           passToAgent = true;
-          agentOverride = `Run a comprehensive V5 psychological analysis on ${target}. Give me the key insights, relationship health, emotional state, and any warnings.`;
+          agentOverride = `Run a comprehensive V5 psychological analysis on ${target}. Give me the key insights, conversation health, emotional state, and any warnings.`;
           break;
         }
 
@@ -1359,7 +1359,7 @@ async function main() {
             continue;
           }
           passToAgent = true;
-          agentOverride = `Get the relationship health score for ${target}. Show me the breakdown of all signals.`;
+          agentOverride = `Get the conversation health score for ${target}. Show me the breakdown of all signals.`;
           break;
         }
 
