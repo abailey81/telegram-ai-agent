@@ -1,0 +1,259 @@
+# ==============================================================================
+# Telegram AI Agent — .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Runtime data (per-user conversation state — never commit)
+# ------------------------------------------------------------------------------
+engine_data/
+rl_data/
+.chat_memory/
+.vector_memory/
+.prompt_performance/
+.response_history/
+.reward_model/
+.reflections/
+.personality_profiles/
+.model_cache/
+.states/
+vector_memory/
+
+# ------------------------------------------------------------------------------
+# Autoresearch artifacts
+# ------------------------------------------------------------------------------
+autoresearch/data/
+autoresearch/model_versions/
+autoresearch/results.tsv
+autoresearch/*.log
+autoresearch/rl_param_results.json
+autoresearch/engine_param_results.json
+autoresearch_*.log
+autoresearch.log
+
+# ------------------------------------------------------------------------------
+# Trained model files (users should train their own via train_all.py)
+# ------------------------------------------------------------------------------
+trained_models/*.joblib
+trained_models/*.joblib.backup
+trained_models/neural/*.pt
+trained_models/neural/*.joblib
+
+# Keep metadata JSONs (architecture descriptions, not weights)
+!trained_models/*_meta.json
+!trained_models/neural/*_meta.json
+
+# ------------------------------------------------------------------------------
+# Compiled / generated output
+# ------------------------------------------------------------------------------
+.web/
+dashboard/__pycache__/
+
+# ------------------------------------------------------------------------------
+# Logs and debug databases
+# ------------------------------------------------------------------------------
+*.log
+*.db
+mcp_errors.log
+telegram_test.log
+
+# ------------------------------------------------------------------------------
+# Secrets and credentials
+# ------------------------------------------------------------------------------
+.env
+
+# ------------------------------------------------------------------------------
+# Telegram session files
+# ------------------------------------------------------------------------------
+*.session
+*.session-journal
+anon.session
+anon.session-journal
+anon_new.session
+anon_new.session-journal
+*.session.sql
+*.session.sql-journal
+
+# ------------------------------------------------------------------------------
+# Node.js
+# ------------------------------------------------------------------------------
+node_modules/
+
+# ------------------------------------------------------------------------------
+# Python byte-compiled / optimized / DLL files
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# ------------------------------------------------------------------------------
+# Python virtual environments
+# ------------------------------------------------------------------------------
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# Distribution / packaging
+# ------------------------------------------------------------------------------
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PEP 582
+__pypackages__/
+
+# ------------------------------------------------------------------------------
+# Testing and coverage
+# ------------------------------------------------------------------------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Test files (project-specific)
+.cursor/
+tests/
+test.py
+extract_test_issues.py
+*.tmp
+test_issues_report.md
+
+# ------------------------------------------------------------------------------
+# Django / Flask
+# ------------------------------------------------------------------------------
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+
+# ------------------------------------------------------------------------------
+# Scrapy
+# ------------------------------------------------------------------------------
+.scrapy
+
+# ------------------------------------------------------------------------------
+# Translations
+# ------------------------------------------------------------------------------
+*.mo
+*.pot
+
+# ------------------------------------------------------------------------------
+# Documentation builds
+# ------------------------------------------------------------------------------
+docs/_build/
+/site
+
+# ------------------------------------------------------------------------------
+# Jupyter / IPython
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# ------------------------------------------------------------------------------
+# Python version managers
+# ------------------------------------------------------------------------------
+.python-version
+
+# UV / pipenv / poetry / pdm lock files (uncomment if needed)
+#uv.lock
+#Pipfile.lock
+#poetry.lock
+#pdm.lock
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# ------------------------------------------------------------------------------
+# Celery
+# ------------------------------------------------------------------------------
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# ------------------------------------------------------------------------------
+# Type checkers and linters
+# ------------------------------------------------------------------------------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Cython debug symbols
+cython_debug/
+
+# ------------------------------------------------------------------------------
+# IDE and editor settings
+# ------------------------------------------------------------------------------
+# PyCharm / JetBrains
+#.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# ------------------------------------------------------------------------------
+# OS and misc
+# ------------------------------------------------------------------------------
+.DS_Store
+.claude/
+claude_desktop_config.json
+assets/external/
+.pypirc
+
+# Temporary data files
+test_upload.txt
+test_voice.ogg
+sticker.webp
+two.png

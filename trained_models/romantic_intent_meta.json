@@ -1,0 +1,244 @@
+{
+  "task": "romantic_intent",
+  "best_classifier": "svm",
+  "cv_accuracy": 0.9503276539973788,
+  "all_cv_results": {
+    "logistic_regression": {
+      "mean_accuracy": 0.8562,
+      "std": 0.0069,
+      "scores": [
+        0.851,
+        0.8655,
+        0.8564,
+        0.8616,
+        0.8463
+      ]
+    },
+    "random_forest": {
+      "mean_accuracy": 0.9306,
+      "std": 0.0055,
+      "scores": [
+        0.9328,
+        0.9221,
+        0.9374,
+        0.9343,
+        0.9266
+      ]
+    },
+    "gradient_boosting": {
+      "mean_accuracy": 0.8368,
+      "std": 0.0098,
+      "scores": [
+        0.8373,
+        0.8319,
+        0.8549,
+        0.8341,
+        0.8257
+      ]
+    },
+    "svm": {
+      "mean_accuracy": 0.9503,
+      "std": 0.0044,
+      "scores": [
+        0.9565,
+        0.9465,
+        0.9542,
+        0.9495,
+        0.945
+      ]
+    }
+  },
+  "n_classes": 25,
+  "classes": [
+    "advice_seeking",
+    "angry",
+    "apology",
+    "casual",
+    "curious",
+    "distant",
+    "flirty",
+    "goodbye",
+    "grateful",
+    "greeting",
+    "hurt",
+    "jealous",
+    "opinion",
+    "planning",
+    "plans",
+    "playful",
+    "romantic",
+    "sad",
+    "serious",
+    "sharing",
+    "sincere",
+    "small_talk",
+    "supportive",
+    "testing",
+    "venting"
+  ],
+  "n_training_examples": 6543,
+  "training_report": {
+    "advice_seeking": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 350.0
+    },
+    "angry": {
+      "precision": 1.0,
+      "recall": 0.9948186528497409,
+      "f1-score": 0.9974025974025974,
+      "support": 386.0
+    },
+    "apology": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "casual": {
+      "precision": 0.9973333333333333,
+      "recall": 0.9790575916230366,
+      "f1-score": 0.988110964332893,
+      "support": 382.0
+    },
+    "curious": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 350.0
+    },
+    "distant": {
+      "precision": 0.8666666666666667,
+      "recall": 1.0,
+      "f1-score": 0.9285714285714286,
+      "support": 13.0
+    },
+    "flirty": {
+      "precision": 1.0,
+      "recall": 0.9976415094339622,
+      "f1-score": 0.9988193624557261,
+      "support": 424.0
+    },
+    "goodbye": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 369.0
+    },
+    "grateful": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "greeting": {
+      "precision": 1.0,
+      "recall": 0.989041095890411,
+      "f1-score": 0.9944903581267218,
+      "support": 365.0
+    },
+    "hurt": {
+      "precision": 0.8235294117647058,
+      "recall": 1.0,
+      "f1-score": 0.9032258064516129,
+      "support": 14.0
+    },
+    "jealous": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "opinion": {
+      "precision": 0.9971509971509972,
+      "recall": 1.0,
+      "f1-score": 0.9985734664764622,
+      "support": 350.0
+    },
+    "planning": {
+      "precision": 0.7857142857142857,
+      "recall": 1.0,
+      "f1-score": 0.88,
+      "support": 11.0
+    },
+    "plans": {
+      "precision": 0.9974226804123711,
+      "recall": 0.9948586118251928,
+      "f1-score": 0.9961389961389961,
+      "support": 389.0
+    },
+    "playful": {
+      "precision": 1.0,
+      "recall": 0.9975186104218362,
+      "f1-score": 0.9987577639751553,
+      "support": 403.0
+    },
+    "romantic": {
+      "precision": 1.0,
+      "recall": 0.9951456310679612,
+      "f1-score": 0.9975669099756691,
+      "support": 412.0
+    },
+    "sad": {
+      "precision": 0.9947643979057592,
+      "recall": 0.9921671018276762,
+      "f1-score": 0.9934640522875817,
+      "support": 383.0
+    },
+    "serious": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 10.0
+    },
+    "sharing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 350.0
+    },
+    "sincere": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 387.0
+    },
+    "small_talk": {
+      "precision": 0.6428571428571429,
+      "recall": 1.0,
+      "f1-score": 0.782608695652174,
+      "support": 18.0
+    },
+    "supportive": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 403.0
+    },
+    "testing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 390.0
+    },
+    "venting": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 350.0
+    },
+    "macro avg": {
+      "precision": 0.9642175566322105,
+      "recall": 0.9976099521975926,
+      "f1-score": 0.9783092160738807,
+      "support": 6543.0
+    },
+    "weighted avg": {
+      "precision": 0.9972469407855967,
+      "recall": 0.9964847929084518,
+      "f1-score": 0.9967018475220047,
+      "support": 6543.0
+    }
+  }
+}

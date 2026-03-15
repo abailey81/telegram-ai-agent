@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-ai-agent"
+version = "2.1.0"
+description = "Production-grade conversational AI platform with 13 intelligence engines, reinforcement learning, voice synthesis, and autonomous model improvement"
+readme = "README.md"
+authors = [
+    {name = "Alec Bailey"}
+]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "fastapi>=0.129.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.8.0",
+    "nest-asyncio>=1.6.0",
+    "pydantic>=2.11.1",
+    "python-dotenv>=1.1.0",
+    "python-json-logger>=3.3.0",
+    "telethon>=1.39.0",
+    "uvicorn>=0.34.0",
+    "rich>=13.0.0",
+    "torch>=2.0.0,<=2.2.2; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "torch>=2.0.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "transformers>=4.35.0,<5.0.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "transformers>=4.35.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "sentence-transformers>=2.2.0,<4.0.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "sentence-transformers>=2.2.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "scikit-learn>=1.3.0",
+    "numpy>=1.26.0,<2.0.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "numpy>=1.26.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "joblib>=1.3.0",
+    "edge-tts>=6.1.0",
+    "chatterbox-tts>=0.1.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "torchaudio>=2.0.0,<=2.2.2; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "torchaudio>=2.0.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "f5-tts-mlx>=0.2.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "pydub>=0.25.0",
+    "faiss-cpu>=1.7.0",
+    "faster-whisper>=1.0.0",
+    "onnxruntime<1.20",
+    "reflex>=0.6.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/abailey81/telegram-ai-agent"
+"Bug Tracker" = "https://github.com/abailey81/telegram-ai-agent/issues"
+
+[tool.setuptools]
+py-modules = ["main", "session_string_generator", "dl_models", "advanced_nlp", "neural_networks", "nlp_engine", "telegram_api", "conversation_engine", "emotional_intelligence", "style_engine", "memory_engine", "reasoning_engine", "psychological_datasets", "media_intelligence", "advanced_intelligence", "media_ai", "rl_engine", "startup_dashboard", "voice_engine", "context_engine", "personality_engine", "prediction_engine", "thinking_engine", "autonomy_engine", "orchestrator", "visual_analysis_engine", "media_response_brain", "call_engine", "call_bridge"]
+packages = ["training"]
+
+[project.scripts]
+telegram-ai-agent = "main:main"
+telegram-ai-agent-session = "session_string_generator:main"
+
+[tool.black]
+line-length = 99
+target-version = ['py311']
+
+[tool.flake8]
+ignore = ["E203", "E501", "W503"]
+max-line-length = 99
+max-complexity = 10
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "build",
+    "dist",
+    "docs/source/conf.py",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.9.0",
+    "flake8>=7.3.0",
+]

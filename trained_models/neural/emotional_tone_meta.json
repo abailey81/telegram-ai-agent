@@ -1,0 +1,37 @@
+{
+  "task": "emotional_tone",
+  "models": {
+    "textcnn": {
+      "val_accuracy": 0.9077540106951871
+    },
+    "emotion_attn": {
+      "val_accuracy": 0.5066844919786097
+    }
+  },
+  "classes": [
+    "anger",
+    "angry",
+    "anxious",
+    "bored",
+    "confident",
+    "desire",
+    "excited",
+    "excitement",
+    "fear",
+    "frustration",
+    "grateful",
+    "gratitude",
+    "happy",
+    "joy",
+    "love",
+    "neutral",
+    "nostalgic",
+    "playful",
+    "sad",
+    "sadness",
+    "surprise",
+    "tenderness",
+    "tired"
+  ],
+  "num_classes": 23
+}

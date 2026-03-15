@@ -1,0 +1,29 @@
+{
+  "task": "conversation_stage",
+  "models": {
+    "textcnn": {
+      "val_accuracy": 0.9111374407582938
+    }
+  },
+  "classes": [
+    "advising",
+    "brainstorming",
+    "closing",
+    "conflict",
+    "cooling_down",
+    "debating",
+    "deep",
+    "deep_conversation",
+    "flirting",
+    "flowing",
+    "makeup",
+    "opening",
+    "resolution",
+    "small_talk",
+    "storytelling",
+    "topic_discussion",
+    "venting",
+    "warming_up"
+  ],
+  "num_classes": 18
+}

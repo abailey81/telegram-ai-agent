@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  telegram-ai-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: telegram-ai-agent
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    ports:
+      - "8765:8765"
+    restart: unless-stopped

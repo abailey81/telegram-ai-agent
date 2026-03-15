@@ -1,0 +1,195 @@
+{
+  "task": "conversation_stage",
+  "best_classifier": "svm",
+  "cv_accuracy": 0.9535178745305327,
+  "all_cv_results": {
+    "logistic_regression": {
+      "mean_accuracy": 0.8669,
+      "std": 0.0091,
+      "scores": [
+        0.8653,
+        0.8752,
+        0.8734,
+        0.8499,
+        0.8706
+      ]
+    },
+    "random_forest": {
+      "mean_accuracy": 0.936,
+      "std": 0.0092,
+      "scores": [
+        0.9349,
+        0.9421,
+        0.9367,
+        0.9195,
+        0.9466
+      ]
+    },
+    "gradient_boosting": {
+      "mean_accuracy": 0.8528,
+      "std": 0.0092,
+      "scores": [
+        0.8445,
+        0.8617,
+        0.8445,
+        0.8472,
+        0.8661
+      ]
+    },
+    "svm": {
+      "mean_accuracy": 0.9535,
+      "std": 0.0061,
+      "scores": [
+        0.9494,
+        0.9638,
+        0.9548,
+        0.9458,
+        0.9538
+      ]
+    }
+  },
+  "n_classes": 18,
+  "classes": [
+    "advising",
+    "brainstorming",
+    "closing",
+    "conflict",
+    "cooling_down",
+    "debating",
+    "deep",
+    "deep_conversation",
+    "flirting",
+    "flowing",
+    "makeup",
+    "opening",
+    "resolution",
+    "small_talk",
+    "storytelling",
+    "topic_discussion",
+    "venting",
+    "warming_up"
+  ],
+  "n_training_examples": 5529,
+  "training_report": {
+    "advising": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "brainstorming": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "closing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 18.0
+    },
+    "conflict": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 450.0
+    },
+    "cooling_down": {
+      "precision": 0.9930394431554525,
+      "recall": 0.9953488372093023,
+      "f1-score": 0.9941927990708479,
+      "support": 430.0
+    },
+    "debating": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "deep": {
+      "precision": 1.0,
+      "recall": 0.993103448275862,
+      "f1-score": 0.9965397923875432,
+      "support": 435.0
+    },
+    "deep_conversation": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1-score": 0.9230769230769231,
+      "support": 18.0
+    },
+    "flirting": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "flowing": {
+      "precision": 0.9976635514018691,
+      "recall": 0.9930232558139535,
+      "f1-score": 0.9953379953379954,
+      "support": 430.0
+    },
+    "makeup": {
+      "precision": 0.9953051643192489,
+      "recall": 0.9929742388758782,
+      "f1-score": 0.9941383352872216,
+      "support": 427.0
+    },
+    "opening": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 445.0
+    },
+    "resolution": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "small_talk": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "storytelling": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "topic_discussion": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "venting": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "warming_up": {
+      "precision": 0.9930555555555556,
+      "recall": 0.9976744186046511,
+      "f1-score": 0.9953596287703016,
+      "support": 430.0
+    },
+    "macro avg": {
+      "precision": 0.9909003650874991,
+      "recall": 0.998451344376647,
+      "f1-score": 0.9943691929961574,
+      "support": 5529.0
+    },
+    "weighted avg": {
+      "precision": 0.9979092156161021,
+      "recall": 0.9978296256104178,
+      "f1-score": 0.9978495470136809,
+      "support": 5529.0
+    }
+  }
+}

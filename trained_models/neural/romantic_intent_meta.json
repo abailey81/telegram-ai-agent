@@ -1,0 +1,36 @@
+{
+  "task": "romantic_intent",
+  "models": {
+    "textcnn": {
+      "val_accuracy": 0.10642570281124498
+    }
+  },
+  "classes": [
+    "advice_seeking",
+    "angry",
+    "apology",
+    "casual",
+    "curious",
+    "distant",
+    "flirty",
+    "goodbye",
+    "grateful",
+    "greeting",
+    "hurt",
+    "jealous",
+    "opinion",
+    "planning",
+    "plans",
+    "playful",
+    "romantic",
+    "sad",
+    "serious",
+    "sharing",
+    "sincere",
+    "small_talk",
+    "supportive",
+    "testing",
+    "venting"
+  ],
+  "num_classes": 25
+}
