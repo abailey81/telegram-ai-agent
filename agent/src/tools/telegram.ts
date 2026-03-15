@@ -420,10 +420,10 @@ export const searchGifs = tool({
 // ─── Auto-Reply Management ───────────────────────────────────
 
 export const setAutoReplyInstructions = tool({
-  description: `Set custom instructions for how the auto-reply bot should behave in a specific chat. Use this when the user gives tone, style, or language directions for a chat (e.g., "be flirty with @username", "speak russian with @username", "be funny and use lots of emojis with @username"). The instructions persist and the bot follows them autonomously.`,
+  description: `Set custom instructions for how the auto-reply bot should behave in a specific chat. Use this when the user gives tone, style, or language directions for a chat (e.g., "be friendly with @username", "speak russian with @username", "be funny and use lots of emojis with @username"). The instructions persist and the bot follows them autonomously.`,
   inputSchema: z.object({
     chat_id: z.string().describe("The chat username (e.g., '@username') or chat ID"),
-    instructions: z.string().describe("Natural language instructions for how the bot should behave in this chat (e.g., 'be flirty, speak russian, use emojis', 'be sweet and romantic, ask about her day')"),
+    instructions: z.string().describe("Natural language instructions for how the bot should behave in this chat (e.g., 'be friendly, speak russian, use emojis', 'be warm and engaging, ask about their day')"),
   }),
   execute: async ({ chat_id, instructions }) => {
     const data = await telegramFetch<{ success: boolean; chat_id: string; instructions: string }>(
@@ -588,7 +588,7 @@ export const analyzeChatV2 = tool({
 });
 
 export const getRelationshipHealth = tool({
-  description: `Get a comprehensive relationship health score (0-100, grade A-F) for a chat. Analyzes: positive-to-negative sentiment ratio (Gottman's 5:1 rule), message balance (who texts more), engagement trends (getting closer or drifting), question ratio (how curious they are about you), emoji warmth, intimacy level (pet names), and recent conflict impact. Returns a detailed breakdown of each signal with individual scores.`,
+  description: `Get a comprehensive conversation health score (0-100, grade A-F) for a chat. Analyzes: positive-to-negative sentiment ratio (Gottman's 5:1 rule), message balance, engagement trends, question ratio, emoji warmth, intimacy level, and recent conflict impact. Returns a detailed breakdown of each signal with individual scores.`,
   inputSchema: z.object({
     chat_id: z.string().describe("Chat username or numeric ID"),
     limit: z.number().min(50).max(500).default(100).describe("Messages to analyze"),
@@ -601,7 +601,7 @@ export const getRelationshipHealth = tool({
 });
 
 export const getProactiveSuggestions = tool({
-  description: `Get AI-generated proactive message suggestions based on time of day, conversation memory, and relationship context. Returns: good morning/night messages, weekend plan suggestions, check-in messages, thinking-of-you texts — all personalized to the relationship and timed appropriately. Use this when the user asks "what should I text her?" or "should I message her?".`,
+  description: `Get AI-generated proactive message suggestions based on time of day, conversation memory, and context. Returns: contextually appropriate messages, topic suggestions, check-in messages — all personalized to the conversation and timed appropriately. Use this when the user asks "what should I text?" or "should I message them?".`,
   inputSchema: z.object({
     chat_id: z.string().describe("Chat username or numeric ID"),
   }),
@@ -889,9 +889,9 @@ Below 1:1 is critical. Returns ratio, assessment, and whether it's healthy.`,
 });
 
 export const getLoveLanguage = tool({
-  description: `Detect partner's primary love language from message patterns.
-Five Love Languages: Words of Affirmation, Quality Time, Acts of Service,
-Receiving Gifts, Physical Touch. Helps tailor messages to what resonates most with them.`,
+  description: `Detect a contact's primary communication preference using Chapman's Five Love Languages framework.
+Categories: Words of Affirmation, Quality Time, Acts of Service, Receiving Gifts, Physical Touch.
+Helps tailor messages to what resonates most with the recipient.`,
   inputSchema: z.object({
     chat_id: z.string().describe("Chat ID or @username"),
   }),
