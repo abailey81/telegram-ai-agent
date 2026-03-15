@@ -4,37 +4,82 @@
 
 ### Production-Grade Conversational Intelligence Platform
 
-*13 intelligence engines · reinforcement learning · deep learning classifiers · voice synthesis · autonomous model improvement*
+*13 intelligence engines · 6 deep learning models · reinforcement learning · voice synthesis · autonomous improvement*
+
+<br>
 
 [![Python 3.10-3.12](https://img.shields.io/badge/python-3.10--3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![MCP](https://img.shields.io/badge/MCP-compatible-7C3AED?style=for-the-badge)](https://modelcontextprotocol.io/)
-[![License](https://img.shields.io/badge/Apache_2.0-green?style=for-the-badge&logo=apache&logoColor=white)](LICENSE)
+[![MCP](https://img.shields.io/badge/MCP_Protocol-7C3AED?style=for-the-badge)](https://modelcontextprotocol.io/)
+[![License](https://img.shields.io/badge/Apache_2.0-D22128?style=for-the-badge&logo=apache&logoColor=white)](LICENSE)
+
+<br>
+
+[![Lint & Format](https://github.com/abailey81/telegram-ai-agent/actions/workflows/python-lint-format.yml/badge.svg)](https://github.com/abailey81/telegram-ai-agent/actions/workflows/python-lint-format.yml)
+[![Docker Build](https://github.com/abailey81/telegram-ai-agent/actions/workflows/docker-build.yml/badge.svg)](https://github.com/abailey81/telegram-ai-agent/actions/workflows/docker-build.yml)
+[![GitHub stars](https://img.shields.io/github/stars/abailey81/telegram-ai-agent?style=social)](https://github.com/abailey81/telegram-ai-agent/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/abailey81/telegram-ai-agent?style=social)](https://github.com/abailey81/telegram-ai-agent/network/members)
 
 ---
 
-**A unified conversational AI system** that combines NLP, emotion detection, personality profiling, reinforcement learning, and voice synthesis into a single Telegram integration. Powered by 13 specialized intelligence engines, 6 deep learning models, and an autonomous improvement framework inspired by Karpathy's autoresearch.
+**A unified conversational AI system** that combines NLP, emotion detection, personality profiling,<br>
+reinforcement learning, and voice synthesis into a single Telegram integration.<br>
+Powered by 13 specialized intelligence engines, 6 deep learning models,<br>
+and an autonomous improvement framework inspired by Karpathy's autoresearch.
 
-[Getting Started](#getting-started) · [Architecture](#architecture) · [Intelligence Engines](#intelligence-engines) · [ML Pipeline](#ml--deep-learning-pipeline) · [API Reference](#api-reference)
+<br>
+
+[Getting Started](#-getting-started) · [Architecture](#-architecture) · [Intelligence Engines](#-intelligence-engines) · [ML Pipeline](#-ml--deep-learning-pipeline) · [API Reference](#-api-reference) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
----
+<br>
 
-## Key Capabilities
+## Highlights
 
-| Capability | Description |
-|:-----------|:------------|
-| **13 Intelligence Engines** | NLP, emotion, conversation, style, memory, reasoning, personality, prediction, RL, voice, media intelligence, advanced intelligence, media AI |
-| **6 Deep Learning Models** | TextCNN + EmotionAttentionNet across 3 classification tasks (66 classes total) |
-| **4 sklearn Classifiers** | SVM, Gradient Boosting, Random Forest, Logistic Regression with cross-validation |
-| **Thompson Sampling RL** | Contextual bandits with 8 response strategies, per-user optimization |
-| **4-Backend Voice Synthesis** | Chatterbox, F5-TTS, Bark, Edge-TTS with zero-shot voice cloning |
-| **Autonomous Improvement** | Karpathy-style autoresearch: 5 experiment types, auto-promotion, no-restart hot-reload |
-| **90+ MCP Tools** | Full Telegram API coverage via Model Context Protocol |
-| **80+ REST Endpoints** | FastAPI bridge with Rich dashboard on port 8765 |
-| **15+ Psychological Frameworks** | Gottman, Plutchik, Big Five, CBT, NVC, Knapp, Chapman, Thomas-Kilmann |
+<table>
+<tr>
+<td width="50%">
+
+**Conversational Intelligence**
+- 13 specialized engines working in concert
+- 15+ psychological frameworks (Gottman, Plutchik, Big Five, CBT, NVC)
+- 13-state conversation machine with goal tracking
+- Three-tier memory: semantic, episodic, procedural (FAISS)
+
+</td>
+<td width="50%">
+
+**Machine Learning**
+- 6 deep learning models (TextCNN + EmotionAttentionNet)
+- 66 classification labels across 3 tasks
+- Thompson sampling RL with per-user optimization
+- Autonomous experiment framework (5 experiment types)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**Voice & Media**
+- 4-backend TTS: Chatterbox, F5-TTS, Bark, Edge-TTS
+- Zero-shot voice cloning from 6-second samples
+- Whisper speech-to-text transcription
+- Real-time voice calls via tgcalls (WebRTC)
+
+</td>
+<td width="50%">
+
+**Platform & API**
+- 90+ MCP tools for Claude Desktop integration
+- 80+ REST endpoints via FastAPI bridge
+- Rich terminal dashboard on port 8765
+- Docker-ready with CI/CD pipelines
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -116,11 +161,18 @@ Three classification tasks trained on **5,000–6,600 labeled examples** each:
 | **Conversational Intent** | 25 | 93.5% (SVM) | 0.89 (TextCNN) |
 | **Conversation Stage** | 18 | 97.1% (GBT) | 0.91 (TextCNN) |
 
-**Model architectures:**
+<details>
+<summary><b>Model Architecture Details</b></summary>
 
-- **TextCNN** — Multi-kernel 1D convolutions (kernels 2,3,4,5) over MiniLM-L6-v2 embeddings (384-dim)
-- **EmotionAttentionNet** — Multi-head self-attention with emotion-aware feature extraction
-- **sklearn classifiers** — SVM, Gradient Boosting, Random Forest, Logistic Regression with 5-fold stratified cross-validation
+<br>
+
+**TextCNN** — Multi-kernel 1D convolutions (kernels 2, 3, 4, 5) over MiniLM-L6-v2 embeddings (384-dim). Each kernel captures n-gram patterns at different scales, outputs concatenated and passed through dropout + fully connected layers.
+
+**EmotionAttentionNet** — Multi-head self-attention with emotion-aware feature extraction. Learns to attend to emotionally salient tokens in the embedding sequence, producing context-weighted representations for classification.
+
+**sklearn Ensemble** — SVM, Gradient Boosting, Random Forest, and Logistic Regression trained with 5-fold stratified cross-validation. Best model per task selected by validation accuracy.
+
+</details>
 
 ### Reinforcement Learning
 
@@ -159,7 +211,10 @@ uv run python -m autoresearch.run_experiment --results
 
 ## Psychological Frameworks
 
-15+ research-backed frameworks integrated across the intelligence engines:
+<details>
+<summary><b>15+ research-backed frameworks integrated across the intelligence engines</b></summary>
+
+<br>
 
 | Framework | Source | Application |
 |:----------|:-------|:------------|
@@ -178,6 +233,8 @@ uv run python -m autoresearch.run_experiment --results
 | **Knapp's Relational Model** | Communication theory | 10 interaction stages |
 | **Chain of Empathy** | arXiv:2311.04915 | 4-step empathetic reasoning pipeline |
 
+</details>
+
 ---
 
 ## Voice Engine
@@ -191,11 +248,19 @@ uv run python -m autoresearch.run_experiment --results
 | **Bark** | Multilingual | Emotional speech synthesis |
 | **Edge-TTS** | 60+ languages | Microsoft Azure, low latency |
 
-**Additional capabilities:**
+<details>
+<summary><b>Additional Voice Capabilities</b></summary>
+
+<br>
+
 - Zero-shot voice cloning from 6-second audio samples
-- Per-user voice persona storage
+- Per-user voice persona storage and selection
 - Real-time voice calls via tgcalls (WebRTC)
-- Whisper-based speech-to-text transcription
+- Whisper-based speech-to-text transcription (faster-whisper)
+- Automatic language detection and backend selection
+- Emotion-controlled synthesis parameters
+
+</details>
 
 ---
 
@@ -207,51 +272,34 @@ uv run python -m autoresearch.run_experiment --results
 - [uv](https://docs.astral.sh/uv/) package manager
 - Telegram API credentials from [my.telegram.org/apps](https://my.telegram.org/apps)
 
-### Installation
+### Quick Start
 
 ```bash
+# Clone and install
 git clone https://github.com/abailey81/telegram-ai-agent.git
 cd telegram-ai-agent
-
-# Pin Python version and install dependencies
 uv python pin 3.12
 uv sync
-```
 
-### Configuration
-
-```bash
+# Configure
 cp .env.example .env
-```
+# Edit .env with your Telegram credentials
 
-Required variables:
-```env
-TELEGRAM_API_ID=your_api_id
-TELEGRAM_API_HASH=your_api_hash
-TELEGRAM_SESSION_STRING=your_session_string
-```
-
-Generate a session string:
-```bash
+# Generate session string
 uv run python session_string_generator.py
-```
 
-### Running
-
-**Terminal 1 — API Bridge + Dashboard:**
-```bash
+# Launch
 uv run python telegram_api.py
 ```
 
-**Terminal 2 — CLI Agent:**
-```bash
-cd agent && bun install && bun run dev
-```
+### Running Modes
 
-**Alternative — MCP Server (for Claude Desktop):**
-```bash
-uv run main.py
-```
+| Mode | Command | Description |
+|:-----|:--------|:------------|
+| **API Bridge** | `uv run python telegram_api.py` | FastAPI server + Rich dashboard on port 8765 |
+| **CLI Agent** | `cd agent && bun install && bun run dev` | Interactive TypeScript CLI powered by Claude |
+| **MCP Server** | `uv run main.py` | Model Context Protocol server for Claude Desktop |
+| **Docker** | `docker compose up -d` | Containerized deployment |
 
 ### Training Models
 
@@ -262,7 +310,7 @@ uv run python train_all.py
 # Check model status
 uv run python train_all.py --status
 
-# Run autonomous improvement
+# Run autonomous improvement (100 experiments)
 uv run python -m autoresearch.run_experiment --n 100
 ```
 
@@ -365,9 +413,10 @@ curl http://localhost:8765/emotional-profile/123456789
 
 ## Configuration
 
-### Engine Parameters
+<details>
+<summary><b>27 tunable engine parameters (auto-optimized by autoresearch)</b></summary>
 
-27 tunable parameters across all engines, automatically optimized by autoresearch:
+<br>
 
 | Engine | Parameters | Examples |
 |:-------|:---------:|:--------|
@@ -378,15 +427,24 @@ curl http://localhost:8765/emotional-profile/123456789
 | **NLP Scoring** | 3 | `staleness_threshold`, `repetition_penalty`, `ai_detection_penalty` |
 | **Orchestrator** | 4 | `base_temperature`, `conflict_temperature`, `creative_temperature` |
 
-All parameters are auto-loaded from `engine_data/optimized_engine_params.json` via file-mtime caching.
+All parameters auto-loaded from `engine_data/optimized_engine_params.json` via file-mtime caching.
+
+</details>
 
 ---
 
 ## Docker
 
 ```bash
+# Build and run
 docker compose up -d
+
+# Build only
+docker build -t telegram-ai-agent .
 ```
+
+<details>
+<summary><b>Docker Compose configuration</b></summary>
 
 ```yaml
 services:
@@ -397,6 +455,8 @@ services:
       - "8765:8765"
     restart: unless-stopped
 ```
+
+</details>
 
 ---
 
@@ -413,8 +473,14 @@ flake8 .
 pytest test_validation.py -v
 ```
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines and [SECURITY.md](SECURITY.md) for security policy.
+
 ---
 
-## License
+<div align="center">
 
-[Apache License 2.0](LICENSE)
+**[Apache License 2.0](LICENSE)**
+
+Built with PyTorch, FastAPI, Telethon, and the Model Context Protocol
+
+</div>
